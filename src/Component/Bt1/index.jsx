@@ -14,7 +14,7 @@ export default function Bt2() {
     },[])
     return(
         <div>
-            The current time is: {time.toLocaleTimeString()}
+            Time: {time.toLocaleTimeString()}
         </div>
     )
 }

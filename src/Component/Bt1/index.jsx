@@ -6,7 +6,7 @@ export default function Bt2() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setTime(new Date());
-        }, 100)
+        }, 5000)
 
         return () => {
             clearTimeout(timer);

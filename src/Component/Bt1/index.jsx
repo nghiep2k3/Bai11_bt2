@@ -7,7 +7,7 @@ function App() {
     const timmer = setInterval(() => {
       const currentTime = new Date().toLocaleTimeString();
       setTime(currentTime);
-    }, 1);
+    }, 5000);
     return () => clearInterval(timmer);
   }, []);
 

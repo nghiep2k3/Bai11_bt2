@@ -1,20 +1,22 @@
-import React, { useState, useEffect  }from 'react'
+import React, { useState, useEffect } from "react";
 
-export default function Bt2() {
-    const [time, setTime] = useState(new Date());
+function App() {
+  const [time, setTime] = useState("");
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setTime(new Date());
-        }, 5000)
+  useEffect(() => {
+    const timmer = setInterval(() => {
+      const currentTime = new Date().toLocaleTimeString();
+      setTime(currentTime);
+    }, 1);
+    return () => clearInterval(timmer);
+  }, []);
 
-        return () => {
-            clearTimeout(timer);
-        };
-    },[])
-    return(
-        <div>
-            Time: {time.toLocaleTimeString()}
-        </div>
-    )
+  return (
+    <div>
+      <h1>Current Time:</h1>
+      <p>{time}</p>
+    </div>
+  );
 }
+
+export default App;
